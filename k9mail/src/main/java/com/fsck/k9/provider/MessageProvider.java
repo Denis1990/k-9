@@ -724,6 +724,20 @@ public class MessageProvider extends ContentProvider {
         }
     }
 
+
+    public class FolderMessagesQueryHandler implements QueryHandler {
+        @Override
+        public String getPath() {
+            return "account/*/folder/#/messages";
+        }
+
+        @Override
+        public Cursor query(Uri uri, String[] projection,
+                            String selection, String[] selectionArgs, String sortOrder) throws Exception {
+            return null;
+        }
+    }
+
     /**
      * Cursor wrapper that release a semaphore on close. Close is also triggered on {@link #finalize()}.
      */
